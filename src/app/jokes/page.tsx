@@ -74,8 +74,10 @@ export default function Jokes() {
         break;
       case 'delete':
         onDelete(id);
+        break;
       case 'accept':
         onAccept(id);
+        break;
     }
   }
 

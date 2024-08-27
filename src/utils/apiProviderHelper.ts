@@ -5,7 +5,7 @@ import { getFullURL, getHeaders } from "./apiSupportHelper";
 // Get Items
 export const getItems = async <T>(baseUrlType: number, url: string): Promise<T> => {
     return Axios.get(getFullURL(baseUrlType, url), {
-        headers: getHeaders()
+        headers: await getHeaders()
     })
     .then(handleData)
     .catch(handleError);
@@ -14,7 +14,7 @@ export const getItems = async <T>(baseUrlType: number, url: string): Promise<T> 
 // Get Item
 export const getItem = async <T>(baseUrlType: number, url: string): Promise<T> => {
     return Axios.get(getFullURL(baseUrlType, url), {
-        headers: getHeaders()
+        headers: await getHeaders()
     })
     .then(handleData)
     .catch(handleError);
@@ -23,7 +23,7 @@ export const getItem = async <T>(baseUrlType: number, url: string): Promise<T> =
 // Post Item
 export const postItem = async <T>(baseUrlType: number, url: string, data?: any): Promise<T> => {
     return Axios.post(getFullURL(baseUrlType, url), data, {
-        headers: getHeaders()
+        headers: await getHeaders()
     })
     .then(handleData)
     .catch(handleError);
@@ -32,7 +32,7 @@ export const postItem = async <T>(baseUrlType: number, url: string, data?: any):
 // Put Item
 export const putItem = async <T>(baseUrlType: number, url: string, data?: any): Promise<T> => {
     return Axios.put(getFullURL(baseUrlType, url), data, {
-        headers: getHeaders()
+        headers: await getHeaders()
     })
     .then(handleData)
     .catch(handleError);
@@ -41,7 +41,7 @@ export const putItem = async <T>(baseUrlType: number, url: string, data?: any): 
 // Delete Item
 export const deleteItem = async <T>(baseUrlType: number, url: string): Promise<T> => {
     return Axios.delete(getFullURL(baseUrlType, url), {
-        headers: getHeaders()
+        headers: await getHeaders()
     })
     .then(handleData)
     .catch(handleError);
